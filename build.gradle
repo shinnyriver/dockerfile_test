@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'camp.nextstep.edu'
@@ -19,6 +20,13 @@ repositories {
 dependencies {
     implementation 'com.github.woowacourse-projects:mission-utils:1.2.0'
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'racingcar.Application' // 메인 클래스 경로를 프로젝트에 맞게 수정
+    }
+}
+
 
 test {
     useJUnitPlatform()
